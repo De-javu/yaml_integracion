@@ -1,11 +1,11 @@
-name: Deploy to server
+name: Deploy to server # Es el nombre que se le asigan workflow
 
-on: push
+on: push # Es el evento que dispara el workflow, en este caso un push al repositorio
 
-jobs:
-  first_jobs:
-    runs-on: ubuntu-latest
+jobs: # Define los trabajos que se ejecutarán en el workflow
+  first_jobs: # Define el primer trabajo
+    runs-on: ubuntu-latest # Especifica el entorno en el que se ejecutará el trabajo, en este caso una máquina virtual con Ubuntu
 
-    steps:
-      - name: Hola mundo
-        run: echo hola Mundo
+    steps: # Define los pasos que se ejecutarán en el trabajo
+      - name: Hola mundo # Es el nombre del paso, que se mostrará en la interfaz de GitHub Actions
+        run: echo hola Mundo # Es el comando que se ejecutará, en este caso imprime "hola Mundo" en la consola
