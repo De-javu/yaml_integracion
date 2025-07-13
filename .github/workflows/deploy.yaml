@@ -3,7 +3,7 @@ name: Deploy to server # Es el nombre que se le asigan workflow
 on: push # Es el evento que dispara el workflow, en este caso un push al repositorio
 
 jobs: # Define los trabajos que se ejecutarán en el workflow
-  first_jobs: # Define el primer trabajo
+  first_job: # Define el primer trabajo
     runs-on: ubuntu-latest # Especifica el entorno en el que se ejecutará el trabajo, en este caso una máquina virtual con Ubuntu
 
     steps: # Define los pasos que se ejecutarán en el trabajo
