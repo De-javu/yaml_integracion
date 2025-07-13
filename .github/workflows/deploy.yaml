@@ -9,3 +9,13 @@ jobs: # Define los trabajos que se ejecutarán en el workflow
     steps: # Define los pasos que se ejecutarán en el trabajo
       - name: Hola mundo # Es el nombre del paso, que se mostrará en la interfaz de GitHub Actions
         run: echo "hola Mundo" # Es el comando que se ejecutará, en este caso imprime "hola Mundo" en la consola
+
+
+  second_job: # Define el segundo trabajo
+    if: ${{ github.ref == 'refs/heads/main'}} # Condición para ejecutar este trabajo solo si el push es a la rama main
+    needs: first_job # Este trabajo depende de que el primer trabajo se complete exitosamente
+    runs-on: ubuntu-latest # Especifica el entorno en el que se ejecutará el trabajo
+
+    steps: # Define los pasos que se ejecutarán en el trabajo
+      - name: Hola Mundo 2 # Es el nombre del paso, que se mostrará en la interfaz de GitHub Actions
+        run: echo "Hola segundo mundo" # Es el comando que se ejecutará, en este caso imprime "Hola segundo mundo" en la consola
